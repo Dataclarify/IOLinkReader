@@ -1,0 +1,24 @@
+# Port selects the IO-Link port on the Keyence NQ-MP8L/EP4L master.
+# Register address is derived automatically: Port 1=2, Port 2=18, Port 3=34, Port 4=50
+# Override with Register_Start = <n> only if using a non-standard register.
+
+[Machine_1]
+IP                 = 192.168.1.30
+Machine_ID         = Machine_01
+Machine_Name       = Packaging Line 1
+Port               = 2          # IO-Link port on master → Modbus register 18
+Rest_Distance      = 100
+Downtime_Threshold = 10
+Live               = True
+
+[Machine_2]
+IP                 = 192.168.0.51
+Machine_ID         = Machine_02
+Machine_Name       = Filling Station B
+Port               = 3          # IO-Link port on master → Modbus register 34
+Rest_Distance      = 100
+Downtime_Threshold = 20
+Live               = False
+
+[Global]
+Refresh_Interval   = 3
